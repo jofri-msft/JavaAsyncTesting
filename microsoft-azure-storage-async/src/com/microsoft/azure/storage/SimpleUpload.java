@@ -65,8 +65,8 @@ public class SimpleUpload {
             try {
                 final long fileSize = fc.getValue().size();
                 BlockIdGenerator generator = new BlockIdGenerator(fileSize, BLOCK_SIZE);
-                final String blockUrl = String.format("%s/disks/%s%s&comp=block", URL, fc.getKey(), Benchmark.SAS_TOKEN);
-                final String blockListUrl = String.format("%s/disks/%s%s&comp=blocklist", URL, fc.getKey(), Benchmark.SAS_TOKEN);
+                final String blockUrl = String.format("%s/disks/%s%s&comp=block", URL, fc.getKey(), ExecutorInterface.SAS_TOKEN);
+                final String blockListUrl = String.format("%s/disks/%s%s&comp=blocklist", URL, fc.getKey(), ExecutorInterface.SAS_TOKEN);
 
                 // Divide into chunks
                 return Observable.range(0, (int) Math.ceil((float) fileSize / BLOCK_SIZE))
@@ -120,8 +120,8 @@ public class SimpleUpload {
             try {
                 final long fileSize = fc.getValue().size();
                 BlockIdGenerator generator = new BlockIdGenerator(fileSize, BLOCK_SIZE);
-                final String blockUrl = String.format("%s/disks/%s%s&comp=block", URL, fc.getKey(), Benchmark.SAS_TOKEN);
-                final String blockListUrl = String.format("%s/disks/%s%s&comp=blocklist", URL, fc.getKey(), Benchmark.SAS_TOKEN);
+                final String blockUrl = String.format("%s/disks/%s%s&comp=block", URL, fc.getKey(), ExecutorInterface.SAS_TOKEN);
+                final String blockListUrl = String.format("%s/disks/%s%s&comp=blocklist", URL, fc.getKey(), ExecutorInterface.SAS_TOKEN);
 
                 int chunks = (int) Math.ceil((float) fileSize / BLOCK_SIZE);
                 final AtomicLong count = new AtomicLong(0);
